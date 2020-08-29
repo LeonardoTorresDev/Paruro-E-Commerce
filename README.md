@@ -1,2 +1,3 @@
 # Paruro-E-commerce
-Servicio de e-commerce para comerciantes de paruros
+Servicio de e-commerce para comerciantes de Paruro
+
