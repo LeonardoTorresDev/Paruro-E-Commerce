@@ -22,8 +22,6 @@ a:hover{
     color: #F16161;
 }
 
-
-
 #header{
     text-align: center;
     padding: 2%;
@@ -52,26 +50,69 @@ a:hover{
     margin-right: 20%;   
 }
 
-
+/*NAV BAR*/
 #menu{
     clear: both;
     background: whitesmoke;
     height: 60px;
     border-top: 5px double black;
     border-bottom: 5px double black;
-
-    
 }
 #menu ul{
+    justify-content: center;
     list-style: none;
     text-decoration:none;
     margin-top: 0.5%;
-    margin-left: 8%;
-    padding-left: 2%;
 }
 #menu ul li{
     line-height: 25px;
     float: left;
+}
+
+.menu_lista{
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 1.5em;
+}
+
+.menu_barra{
+    flex: 5 1 auto;
+}
+
+.menu_el{
+    flex: 1 1 auto;
+}
+
+.busq{
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+
+.busqBarra{
+    flex: 10 1 auto;
+    align-content: center;
+    width: 90%;
+    height: 40px;
+    border: 2px solid #C6C5C5;
+}
+
+#menu ul li input[type="text"]:focus{
+    border: 2px solid black;  
+
+}
+#menu ul li input[type="text"]:hover{
+    border: 2px solid #5B5B5B; 
+    
+}
+
+.busqBoton{
+    margin-top: 2px;
+    flex: 1 1 auto;
+    margin-left: 20px;
+    margin-top: 10px;
+    height: 1.5em;
+    width: 1.5em;
 }
 #menu ul li a{
     display: block;
@@ -80,6 +121,7 @@ a:hover{
 #menu a{
     display: inline-block;
     text-decoration: none;
+    text-align: center;
     padding: 10px;
     padding-left: 50px;
     padding-right:50px;
@@ -89,42 +131,70 @@ a:hover{
     color: #736D6D;
     border-bottom: 2px solid black;
 }
-#menu ul li input[type="text"]{
-    margin-top: 10px;
-    width: 600px;
-    height: 20px;
-    border: 2px solid #C6C5C5;
- 
+/*Contenedor padre*/
+.contenido{
+    display: flex;
+    flex-flow: row nowrap;
 }
-#menu ul li input[type="text"]:focus{
-    margin-top: 10px;
-    width: 600px;
-    height: 20px;
-    border: 2px solid black;  
-
-}
-#menu ul li input[type="text"]:hover{
-    margin-top: 10px;
-    width: 600px;
-    height: 20px;
-    border: 2px solid #5B5B5B; 
-    
-}
-#menu ul li input[type="image"]{
+/*LATERAL*/
+#lateral{
+    flex: 2 1 auto;
+    float:left;
+    margin-top: 2.5%;
     margin-left: 10px;
-    height: 10px;
+    margin-right: 2%;
+    min-width: 200px;
+    border: 1px solid black;
+    padding: 15px;
+    height: max-content;
+
+}
+#lateral ul{
+    text-decoration:none;
+    list-style: square;
+    margin-left:15%;
+    margin-bottom: 15%;
+}
+#lateral ul li{
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+#lateral h3{
+    padding:7%;
+}
+#lateral a{
+    text-decoration: none;
+}
+#login{
+    margin-top: 5%;
+    border: 1px solid black;
+    margin-bottom: 10%;
+}
+#categorias{
+    border: 1px solid black;
+    margin-bottom: 5%;
+}
+#lateral ul li a{
+    color: #696969;
+}
+#lateral ul li a:hover{
+    color: black;
 }
 
-
+/*CENTRAL*/
 #central{  
     float:right;
-    width: 75%;
+    flex: 9 1 auto;
     height: auto;
     min-height: 900px;
     border: 1px solid black;
     margin-right: 25px;
     margin-top: 2.5%;
     padding: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
 #central h1{
     font-size: 48px;
@@ -134,7 +204,12 @@ a:hover{
     letter-spacing: 1px;
     padding: 3%;
 }
-
+.ultimasnovedades{
+    flex: 1 1 auto;
+    text-align: center;
+    width: 100%;
+    height: min-content;
+}
 
 .product img{
     width: 270px;
@@ -142,8 +217,8 @@ a:hover{
     padding: 10px;
 }
 .product{
-    width: 25%;
     text-align:center;
+    height: min-content;
     border: 1px solid black;
     float: left;
     margin-left: 2%;
@@ -151,6 +226,8 @@ a:hover{
     padding: 2%;
     margin-bottom: 4%;
     padding-bottom: 5%;
+
+    flex: 1 1 auto;
 }
 .product h2{
     font-size: 24px;
@@ -225,54 +302,23 @@ input[type="email"],select{
     display: block;
     color: #F16161;
 }
-#lateral{
-    width: 18%;
-    float:left;
-    margin-top: 2.5%;
-    margin-left: 10px;
-    border: 1px solid black;
-    padding: 15px;
-    height: auto;
-
-}
-#lateral ul{
-    text-decoration:none;
-    list-style: square;
-    margin-left:15%;
-    margin-bottom: 15%;
-}
-#lateral ul li{
-    margin-top: 3%;
-    margin-bottom: 5%;
-}
-#lateral h3{
-    padding:7%;
-}
-#lateral a{
-    text-decoration: none;
-}
-#login{
-    margin-top: 5%;
-    border: 1px solid black;
-    margin-bottom: 10%;
-}
-#categorias{
-    border: 1px solid black;
-    margin-bottom: 5%;
-}
-#lateral ul li a{
-    color: #696969;
-}
-#lateral ul li a:hover{
-    color: black;
-}
 
 #footer{
+    margin-top: 15px;
     clear: both;
     text-align: center;
     padding-top:2%;
     padding-bottom: 2%;
 }
 
+@media all and (max-width: 1117px){
+    #menu{
+        height: 120px;
+    }
+}
 
-
+@media all and (max-width: 900px){
+    .product img{
+        display: none;
+    }
+}

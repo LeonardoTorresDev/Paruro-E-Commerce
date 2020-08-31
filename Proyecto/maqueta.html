@@ -21,30 +21,30 @@
         </header>
         <!--MENU-->
         <nav id="menu">
-            <ul>
-                <li>
+            <ul class="menu_lista">
+                <li class="menu_el">
                     <a href="#">Inicio</a>
                 </li>
-                <li>
-                    <form action="index.php" method="POST">
-                        <input type="text" name="buscar">
-                        <input type="image" src="assets/img/lupa.png">
+                <li  class="menu_barra">
+                    <form class="busq" action="index.php" method="POST">
+                        <input class="busqBarra" type="text" name="buscar">
+                        <input class="busqBoton" type="image" src="assets/img/lupa.png">
                     </form>                
                 </li>
-                <li>
+                <li class="menu_el">
                     <a href="#">Inicio de sesion</a>
                 </li>
-                <li>
+                <li class="menu_el">
                     <a href="#">Registro</a>
                 </li>
-                <li>
+                <li class="menu_el">
                     <a href="#">Contacto</a>
                 </li>
             </ul>
         </nav>
         <!--BARRA LATERAL-->
 
-        <div id="content">
+        <div id="content" class="contenido">
         
                 <aside id="lateral">
                     <div id="login" class="block-aside">
@@ -80,7 +80,9 @@
         
             <!--Contendio principal-->
             <div id="central">
-                <h1>Ultimas novedades</h1>
+                <div class="ultimasnovedades">
+                    <h1>Ultimas novedades</h1>
+                </div>
                 <div class="product">
                     <img src="assets/img/ProductoArduino.jpg">
                     <h2>Arduino Uno</h2>
