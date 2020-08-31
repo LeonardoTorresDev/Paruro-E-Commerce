@@ -5,7 +5,7 @@
             <ul>
                
                 
-                <?php if(isset($_SESSION['admin'])):?>
+                <?php if(isset($_SESSION['admin'])||$_SESSION['identity']->rol=='root'):?>
                 <li>
                     <a href="">Gestionar categorias</a>
                 </li>
@@ -15,9 +15,11 @@
                 <li>
                     <a href="">Gestionar pedidos</a>
                 </li>
-                <li>
-                    <a href="">Registrar otro admin</a>
-                </li>
+                    <?php if ($_SESSION['identity']->rol=='root') :?>
+                        <li>
+                            <a href="<?=base_url?>usuario/registroadmin">Registrar otro admin</a>
+                        </li>
+                    <?php endif;?>             
                 <?php else:?>
                 <li>
                     <a href="#">Mis pedidos</a>

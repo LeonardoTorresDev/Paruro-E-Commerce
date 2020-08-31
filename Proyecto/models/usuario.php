@@ -67,6 +67,17 @@
             }
             return $result;
         }
+
+        public function saveAdmin(){
+            $sql="INSERT INTO usuarios VALUES (NULL, '{$this->getNombre()}' , '{$this->getApellidos()}' , '{$this->getEmail()}' , '{$this->getPassword()}','admin',NULL);";
+            $save=$this->db->query($sql);
+            $result=false;
+            if($save){
+                $result=true;
+            }
+            return $result;
+        }
+        
         public function login(){
             //Comprobar si existe el usuario
             $result=false;
