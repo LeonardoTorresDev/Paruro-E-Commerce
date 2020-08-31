@@ -13,7 +13,6 @@ CREATE TABLE usuarios(
     CONSTRAINT uq_email UNIQUE(email)
 )Engine=InnoDB;
 
-INSERT INTO usuarios VALUES (NULL,'Admin','Admin','Admincomercio@gmail.com','contraseña','Admin',null);
 
 CREATE TABLE categorias(
     id int(255) auto_increment not null,
@@ -28,6 +27,7 @@ INSERT INTO categorias VALUES(NULL,'Servicio tecnico');
 CREATE TABLE productos(
     id              int(255) auto_increment not null,
     categoria_id    int(255) not null,
+    usuario_id      int(255) not null,
     nombre          varchar(100) not null,
     descripcion     text,
     precio          float(100,2) not null,
@@ -36,7 +36,8 @@ CREATE TABLE productos(
     fecha           date not null,
     imagen          varchar(255) not null,
     CONSTRAINT pk_usuarios PRIMARY KEY(id),
-    CONSTRAINT fk_producto_categoria FOREIGN KEY (categoria_id) REFERENCES categorias(id) 
+    CONSTRAINT fk_producto_categoria FOREIGN KEY (categoria_id) REFERENCES categorias(id),
+    CONSTRAINT fk_producto_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 )Engine=InnoDB;
 
 CREATE TABLE pedidos(
@@ -57,8 +58,10 @@ CREATE TABLE lineas_pedidos(
     id          int(255) auto_increment not null,
     pedido_id   int(255) not null,
     producto_id int(255) not null,
+    vendedor_id int(255) not null,
     unidades    int(255) not null,
     CONSTRAINT pk_lineas_pedidos PRIMARY KEY(id),
     CONSTRAINT fk_linea_pedido FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
-    CONSTRAINT fk_linea_producto FOREIGN KEY (producto_id) REFERENCES productos(id)
+    CONSTRAINT fk_linea_producto FOREIGN KEY (producto_id) REFERENCES productos(id),
+    CONSTRAINT fk_linea_producto_vendedor FOREIGN KEY (vendedor_id) REFERENCES productos(usuario_id)
 )Engine=InnoDB;
