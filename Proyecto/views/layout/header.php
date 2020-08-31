@@ -3,8 +3,8 @@
     <head>
         <meta charset ="utf-8">
         <title>Tienda Paruro</title>
-        <link rel="icon" href="assets/img/favicon.png"/>
-        <link rel="stylesheet" href="assets/styles/styles.css"/>
+        <link rel="icon" href="<?=base_url?>assets/img/favicon.png"/>
+        <link rel="stylesheet" href="<?=base_url?>assets/styles/styles.css"/>
     </head>
     <body>
         <!--CABECERA-->
@@ -28,7 +28,7 @@
                 <li>
                     <form action="index.php" method="POST">
                         <input type="text" name="buscar">
-                        <input type="image" src="assets/img/lupa.png">
+                        <input type="image" src="<?=base_url?>assets/img/lupa.png">
                     </form>                
                 </li>
                 <li>

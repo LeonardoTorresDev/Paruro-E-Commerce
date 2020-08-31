@@ -1,6 +1,6 @@
 <div id="registro">
     <h1>Registrese en Paruro E-commerce</h1>
-    <form action="index.php?controller=usuario&action=save" method="POST">
+    <form action="save" method="POST">
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" placeholder="Ingrese su nombre" required/>
         <label for="apellidos">Apellidos</label>
