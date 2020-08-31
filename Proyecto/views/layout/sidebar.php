@@ -1,18 +1,28 @@
 <aside id="lateral">
-    <div id="login" class="block-aside">
-        <h3>Bienvenido</h3>
-        <ul>
-            <li>
-                <a href="#">Mis pedidos</a>
-            </li>
-            <li>
-                <a href="#">Gestionar pedidos</a>
-            </li>
-            <li>
-                <a href="#">Gestionar categorias</a>
-            </li>
-        </ul> 
-    </div>
+    <?php if(isset($_SESSION['identity'])):?>
+        <div id="login" class="block-aside">
+            <h3>Bienvenido, <?=$_SESSION['identity']->nombre.' '.$_SESSION['identity']->apellidos?></h3>
+            <ul>
+                <li>
+                    <a href="#">Mis pedidos</a>
+                </li>
+                <li>
+                    <a href="#">Mi carrito</a>
+                </li>
+                <?php if(isset($_SESSION['admin'])):?>
+                <li>
+                    <a href="">Gestionar categorias</a>
+                </li>
+                <li>
+                    <a href="">Gestionar catalogo</a>
+                </li>
+                <li>
+                    <a href="">Gestionar pedidos</a>
+                </li>
+                <?php endif;?>    
+            </ul> 
+        </div>
+    <?php endif;?>
     <div id="categorias">
         <h3>
             Categorias

@@ -23,7 +23,7 @@
         <nav id="menu">
             <ul>
                 <li>
-                    <a href="#">Inicio</a>
+                    <a href="<?=base_url?>">Inicio</a>
                 </li>
                 <li>
                     <form action="index.php" method="POST">
@@ -31,14 +31,28 @@
                         <input type="image" src="<?=base_url?>assets/img/lupa.png">
                     </form>                
                 </li>
+
+
+                <?php if(!isset($_SESSION['identity'])):?>
                 <li>
-                    <a href="#">Inicio de sesion</a>
+                    <a href="<?=base_url?>usuario/login">Inicio de sesion</a>
                 </li>
                 <li>
-                    <a href="#">Registro</a>
+                    <a href="<?=base_url?>usuario/registro">Registro</a>
                 </li>
+                <?php else: ?>
+                    <li>
+                        <a><?=$_SESSION['identity']->nombre.' '.$_SESSION['identity']->apellidos?></a>
+                    </li>
+                    <li>
+                        <a href="<?=base_url?>usuario/logout">Cerrar sesion</a>
+                    </li>
+                <?php endif;?>    
+
+
+
                 <li>
-                    <a href="#">Contacto</a>
+                    <a href="<?=base_url?>">Contacto</a>
                 </li>
             </ul>
         </nav>

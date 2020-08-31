@@ -81,5 +81,43 @@
             }
             header("Location:".base_url.'usuario/registro');
         }
+        public function login(){
+            require_once 'views/usuario/login.php';
+        }
+
+        public function inicioSesion(){
+
+            var_dump($_POST);
+            if(isset($_POST)){
+                
+                //Identificar al usuario
+                $usuario=new Usuario();
+                $usuario->setEmail($_POST['email']);
+                $usuario->setPassword($_POST['password']);
+
+                $identity=$usuario->login();
+                
+                if($identity && is_object($identity)){
+                    $_SESSION['identity']=$identity;
+                    if($identity->rol=='admin'){
+                        $_SESSION['admin']=true;
+                    }              
+                }else{
+                    $_SESSION['error_login']="Identificacion fallida";
+                }
+
+            }
+            header("Location:".base_url);
+        }
+
+        public function logout(){
+            if(isset($_SESSION['identity'])){
+                unset($_SESSION['identity']);
+            }
+            if(isset($_SESSION['admin'])){
+                unset($_SESSION['admin']);
+            }
+            header("Location:".base_url);
+        }
     }
 ?>
