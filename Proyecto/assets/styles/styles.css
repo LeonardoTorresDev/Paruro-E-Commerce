@@ -22,11 +22,46 @@ a:hover{
     color: #F16161;
 }
 
+table{
+    text-align:center;
+    width: 90%;
+    border: 1px solid black;
+    margin-left:5%;
+}
+th{
+    padding: 1%;
+}
+td{
+    padding: 2%;
+    border-top:1px solid #736D6D;
+}
+
+.button{
+    margin-left:5%;
+    display:block;
+    background: #29f2a4;
+    text-decoration:none;
+    color: black;
+    font-weight: bolder;
+}
+.button-small{
+    width: 30%;
+    height: 30px;
+    padding: 1%;
+    text-align:center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-bottom: 3%;
+    border-radius: 8px;
+}
+
+
+
+
 #header{
     text-align: center;
     padding: 2%;
-    background-color: #E6E6E6;
-   
+    background-color: #E6E6E6; 
 }
 #header a{
 
@@ -95,6 +130,7 @@ a:hover{
     width: 90%;
     height: 40px;
     border: 2px solid #C6C5C5;
+    font-size: 20px;
 }
 
 #menu ul li input[type="text"]:focus{
@@ -109,7 +145,7 @@ a:hover{
 .busqBoton{
     margin-top: 2px;
     flex: 1 1 auto;
-    margin-left: 20px;
+    margin-left: 25px;
     margin-top: 10px;
     height: 1.5em;
     width: 1.5em;
@@ -192,19 +228,19 @@ a:hover{
     margin-top: 2.5%;
     padding: 10px;
 
-    display: flex;
+    display: block;
     flex-flow: row wrap;
     justify-content: space-around;
 }
 #central h1{
     font-size: 48px;
     margin-bottom: 5px;
-  
+    margin-top: 5%;
     font-weight: normal;
     letter-spacing: 1px;
     padding: 3%;
 }
-.ultimasnovedades{
+.titulo{
     flex: 1 1 auto;
     text-align: center;
     width: 100%;
@@ -223,10 +259,10 @@ a:hover{
     float: left;
     margin-left: 2%;
     margin-right: 2%;
-    padding: 2%;
+    padding: 2.1%;
     margin-bottom: 4%;
     padding-bottom: 5%;
-
+    width: 24.5%;
     flex: 1 1 auto;
 }
 .product h2{
@@ -269,24 +305,26 @@ a:hover{
 input[type="text"],
 input[type="password"],
 input[type="email"],select{
-    padding: 1%;
+    padding: 2%;
     width: 80%;
     display: block;
     border: 1px solid black;
     border-radius: 8px;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    font-size: 20px;
 }
 #registro input[type="submit"]{
     padding: 3%;
     padding-left: 15%;
     padding-right: 15%;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    margin-bottom: 3%;
+    margin-top: 3%;
     margin-left: 25%;
     border: 1px solid black;
     border-radius: 8px;
     background-color:none;
+    font-size: 20px;
     
 }
 

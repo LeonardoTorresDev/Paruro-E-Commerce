@@ -154,7 +154,7 @@
                 
                 $_SESSION['register']="failed";
             }
-            header("Location:".base_url.'usuario/registro');
+            header("Location:".base_url.'usuario/registroadmin');
         }
 
 
@@ -199,6 +199,10 @@
                 unset($_SESSION['admin']);
             }
             header("Location:".base_url);
+            ob_end_flush();
+        }
+        public function  contacto(){
+            require_once 'views/contacto/index.php';
         }
     }
 ?>

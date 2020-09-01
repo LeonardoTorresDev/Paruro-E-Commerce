@@ -14,6 +14,26 @@
             }
             return $alerta;
         }
+        public static function isAdmin(){
+            if(!empty($_SESSION)){
+                if( isset($_SESSION['identity']) && (isset($_SESSION['admin']) || ($_SESSION['identity']->rol=='root'))){
+                    return true;
+                }
+                else{
+                    header("Location: ".base_url);
+                }
+            }
+            else{
+                header("Location: ".base_url);
+            }
+        }
+
+        public static function showCategorias(){
+            require_once 'models/categoria.php';
+            $categoria= new Categoria();
+            $categorias=$categoria->getAll();
+            return $categorias;
+        }
     }
     
 ?>

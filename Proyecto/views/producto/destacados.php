@@ -1,4 +1,4 @@
-    <h1>Ultimas novedades</h1>
+    <h1 class="titulo">Ultimas novedades</h1>
     <div class="product">
         <img src="<?=base_url?>assets/img/ProductoArduino.jpg">
         <h2>Arduino Uno</h2>
@@ -23,3 +23,10 @@
         <p>PEN 1.00</p>
         <a href="">Comprar</a>
     </div>
+    <div class="product">
+        <img src="<?=base_url?>assets/img/Compuerta.jpg">
+        <h2>Compuerta 74LS32</h2>
+        <p>PEN 1.00</p>
+        <a href="">Comprar</a>
+    </div>
+

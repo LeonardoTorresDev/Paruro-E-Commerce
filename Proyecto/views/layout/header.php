@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <!DOCTYPE HTML>
 <html lang="es">
     <head>
@@ -10,7 +14,7 @@
         <!--CABECERA-->
         <header id="header">
             <div id="logo">
-                <a href="index.php">
+                <a href="<?=base_url?>">
                     Paruro E-Commerce
                 </a>
                 <h2>
@@ -21,38 +25,36 @@
         </header>
         <!--MENU-->
         <nav id="menu">
-            <ul>
-                <li>
+            <ul class="menu_lista">
+                <li class="menu_el">
                     <a href="<?=base_url?>">Inicio</a>
                 </li>
-                <li>
-                    <form action="index.php" method="POST">
-                        <input type="text" name="buscar">
-                        <input type="image" src="<?=base_url?>assets/img/lupa.png">
+                <li class="menu_barra">
+                    <form class="busq" action="index.php" method="POST">
+                        <input class="busqBarra" type="text" name="buscar">
+                        <input class="busqBoton" type="image" src="<?=base_url?>assets/img/lupa.png">
                     </form>                
                 </li>
 
 
                 <?php if(!isset($_SESSION['identity'])):?>
-                <li>
+                <li class="menu_el">
                     <a href="<?=base_url?>usuario/login">Inicio de sesion</a>
                 </li>
-                <li>
+                <li class="menu_el">
                     <a href="<?=base_url?>usuario/registro">Registro</a>
                 </li>
                 <?php else: ?>
-                    <li>
+                    <li class="menu_el">
                         <a><?=$_SESSION['identity']->nombre.' '.$_SESSION['identity']->apellidos?></a>
                     </li>
-                    <li>
+                    <li class="menu_el" >
                         <a href="<?=base_url?>usuario/logout">Cerrar sesion</a>
                     </li>
                 <?php endif;?>    
 
-
-
-                <li>
-                    <a href="<?=base_url?>">Contacto</a>
+                <li class="menu_el">
+                    <a href="<?=base_url?>usuario/contacto">Contacto</a>
                 </li>
             </ul>
         </nav>
