@@ -59,7 +59,7 @@
         }
 
         public function save(){
-            $sql="INSERT INTO usuarios VALUES (NULL, '{$this->getNombre()}' , '{$this->getApellidos()}' , '{$this->getEmail()}' , '{$this->getPassword()}','user', NULL);";
+            $sql="INSERT INTO usuarios VALUES (NULL, '{$this->getNombre()}' , '{$this->getApellidos()}' , '{$this->getEmail()}' , '{$this->getPassword()}','user', NULL,NULL);";
             $save=$this->db->query($sql);
             $result=false;
             if($save){
@@ -69,7 +69,7 @@
         }
 
         public function saveAdmin(){
-            $sql="INSERT INTO usuarios VALUES (NULL, '{$this->getNombre()}' , '{$this->getApellidos()}' , '{$this->getEmail()}' , '{$this->getPassword()}','admin',NULL);";
+            $sql="INSERT INTO usuarios VALUES (NULL, '{$this->getNombre()}' , '{$this->getApellidos()}' , '{$this->getEmail()}' , '{$this->getPassword()}','admin',NULL,NULL);";
             $save=$this->db->query($sql);
             $result=false;
             if($save){
