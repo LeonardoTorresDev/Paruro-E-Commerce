@@ -16,10 +16,10 @@ a{
     color: #0035CB;
 }
 a:visited{
-    color: #3DDFFF;
+    color: black;
 }
 a:hover{
-    color: #F16161;
+    color: whitesmoke;
 }
 
 table{
@@ -27,6 +27,7 @@ table{
     width: 90%;
     border: 1px solid black;
     margin-left:5%;
+    margin-bottom: 5%;
 }
 th{
     padding: 1%;
@@ -36,6 +37,13 @@ td{
     border-top:1px solid #736D6D;
 }
 
+.thumb{
+    display: block;
+    width: 500px; height: 350px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
 .button{
     margin-left:5%;
     display:block;
@@ -43,6 +51,7 @@ td{
     text-decoration:none;
     color: black;
     font-weight: bolder;
+    border-radius: 8px;
 }
 .button-small{
     width: 30%;
@@ -52,7 +61,17 @@ td{
     font-size: 24px;
     margin-bottom: 20px;
     margin-bottom: 3%;
-    border-radius: 8px;
+    
+}
+.button-edit{
+    background: #44E7F1;
+    padding:10px;
+    margin-bottom: 10px;
+}
+.button-delete{
+    background: #F16161;
+    padding:10px;
+    margin-bottom: 10px;
 }
 
 
@@ -130,6 +149,7 @@ td{
     width: 90%;
     height: 40px;
     border: 2px solid #C6C5C5;
+    border-radius:8px;
     font-size: 20px;
 }
 
@@ -240,6 +260,7 @@ td{
     letter-spacing: 1px;
     padding: 3%;
 }
+
 .titulo{
     flex: 1 1 auto;
     text-align: center;
@@ -302,9 +323,12 @@ td{
     margin-right: 20%;   
 }
 #registro
-input[type="text"],
-input[type="password"],
-input[type="email"],select{
+textarea,
+#registro input[type="text"],
+#registro input[type="password"],
+#registro input[type="email"],
+#registro input[type="number"],
+#registro select{
     padding: 2%;
     width: 80%;
     display: block;
@@ -312,7 +336,7 @@ input[type="email"],select{
     border-radius: 8px;
     margin-bottom: 3%;
     margin-top: 3%;
-    font-size: 20px;
+    font-size: 16px;
 }
 #registro input[type="submit"]{
     padding: 3%;
@@ -324,8 +348,12 @@ input[type="email"],select{
     border: 1px solid black;
     border-radius: 8px;
     background-color:none;
-    font-size: 20px;
+    font-size: 18px;
     
+}
+
+#registro textarea{
+    resize:none;
 }
 
 .alert_green{
