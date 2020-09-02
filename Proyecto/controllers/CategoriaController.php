@@ -1,6 +1,7 @@
 <?php
 
     require_once 'models/categoria.php';
+    require_once 'models/producto.php';
 
     class CategoriaController{
         public function index(){
@@ -52,9 +53,22 @@
             else{
                 $_SESSION['categoria_save']="failed";
                 header("Location:".base_url."categoria/crear"); 
-            }
-            
-            
+            }            
         }
+        public function ver(){
+            if(isset($_GET)){
+                $id=$_GET['id'];
+                $categoria= new Categoria();
+                $categoria->setId($id);
+                $categoria=$categoria->getOne();
+
+                $producto=new Producto();
+                $producto->setCategoria_id($id);
+                $productos=$producto->getAllCategory();
+        
+            }
+
+            require_once 'views/categoria/ver.php';
+        } 
     }
 ?>

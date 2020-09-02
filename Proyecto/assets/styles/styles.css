@@ -13,11 +13,9 @@ body{
 }
 
 a{
-    color: #0035CB;
-}
-a:visited{
     color: black;
 }
+
 a:hover{
     color: whitesmoke;
 }
@@ -52,6 +50,7 @@ td{
     color: black;
     font-weight: bolder;
     border-radius: 8px;
+    margin-top: 1%;
 }
 .button-small{
     width: 30%;
@@ -60,8 +59,6 @@ td{
     text-align:center;
     font-size: 24px;
     margin-bottom: 20px;
-    margin-bottom: 3%;
-    
 }
 .button-edit{
     background: #44E7F1;
@@ -73,6 +70,7 @@ td{
     padding:10px;
     margin-bottom: 10px;
 }
+
 
 
 
@@ -275,6 +273,7 @@ td{
 }
 .product{
     text-align:center;
+    align-content: center;
     height: min-content;
     border: 1px solid black;
     float: left;
@@ -285,15 +284,20 @@ td{
     padding-bottom: 5%;
     width: 24.5%;
     flex: 1 1 auto;
+    height: 380px;
 }
 .product h2{
     font-size: 24px;
     font-weight: bold;
-    padding:  10px;
+    
+    color: black;
+}
+.product h2:hover{
+    color: #5B5B5B;
 }
 .product p{
     font-size: 18px;
-    padding:  10px;
+    margin-bottom: 20px;
 }
 .product a{
     font-size: 24px;
@@ -376,6 +380,64 @@ textarea,
     padding-top:2%;
     padding-bottom: 2%;
 }
+
+/*VER PRODUCTOS*/
+#detail-product{
+    width: 100%;
+    margin-left: 5%;
+}
+
+#detail-product .image{
+    display: block;
+    width: 47%;
+    float:left;
+}
+
+#detail-product img{
+    display: block;
+    width: 80%;
+    height: 330px;
+    float:left;
+}
+
+#detail-product .data{
+    font-size: 24px;
+    width: 50%;
+    float:right;
+}
+
+#detail-product .description{
+    margin-bottom: 20px;
+    text-align: justify;
+    width: 80%;
+
+}
+
+#detail-product .price{
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #444;
+}
+
+#detail-product .button{
+    width: 200px;
+    text-align: center;
+    margin-top: 5%;
+    padding: 25px;
+}
+#detail-product .oferta{
+    color: green;
+}
+
+.contacto{
+    width: 60%;
+    place-content: center;
+    margin-top: 30px;
+    margin-left: 20%;
+}
+
+
+
 
 @media all and (max-width: 1117px){
     #menu{

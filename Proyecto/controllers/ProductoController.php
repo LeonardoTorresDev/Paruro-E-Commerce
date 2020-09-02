@@ -125,6 +125,21 @@
 		header('Location:'.base_url.'producto/gestion');
         }
 
+        public function ver(){
+            if(isset($_GET['id'])){
+                $id=$_GET['id'];
+          
+                $producto=new Producto();
+                $producto->setId($id);
+
+                $product=$producto->getOne(); 
+                $vendedor=$producto->getVendedor($product->usuario_id);
+
+                require_once 'views/producto/ver.php';
+            }
+
+        }
+
 
     }
 ?>

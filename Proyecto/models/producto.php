@@ -77,8 +77,23 @@
             $this->imagen=$imagen;
         }
 
+        public function getVendedor($id){
+            $sql="SELECT nombre, apellidos FROM usuarios WHERE id=$id;";
+            $vendedor=$this->db->query($sql);
+            return $vendedor->fetch_object();
+        }
+
         public function getAll(){
             $productos=$this->db->query("SELECT * FROM productos ORDER BY id DESC;");
+            return $productos;
+        }
+
+        public function getAllCategory(){
+            $sql = "SELECT p.*, c.nombre AS 'catnombre' FROM productos p "
+                    . "INNER JOIN categorias c ON c.id = p.categoria_id "
+                    . "WHERE p.categoria_id = {$this->getCategoria_id()} "
+                    . "ORDER BY id DESC;";
+            $productos = $this->db->query($sql);
             return $productos;
         }
 
