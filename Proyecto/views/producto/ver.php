@@ -25,7 +25,11 @@
             <?php if($product->oferta=='SI'):?>
                 <p class="oferta">Producto en oferta</p>
             <?php endif;?>
-			<a href="<?=base_url?>carrito/add&id=<?=$product->id?>" class="button">Comprar</a>
+            <form  action="<?=base_url?>carrito/add&id=<?=$product->id?>" method="POST">
+                <label for="cantidad" class="price">Cantidad</label>
+                <input type="number" class="ventas" name="cantidad" value="1" min="1" max="<?=$product->stock?>" required/>
+                <input type="submit" value="Comprar" class="button-ventas"/>
+            </form>
 		</div>
 	</div>
 <?php else:?>

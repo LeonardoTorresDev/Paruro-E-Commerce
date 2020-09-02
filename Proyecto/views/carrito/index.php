@@ -1,0 +1,41 @@
+<h1>Carrito de la compra</h1>
+<table>
+    <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Unidades</th>
+        <?php if(isset($_SESSION['carrito'])):?>
+            </tr>
+            <?php foreach($carrito as $indice=>$elemento):
+                $producto=$elemento['producto'];
+            ?>
+            <tr>             
+                <td>
+                    <?php if ($producto->imagen != null): ?>
+                        <img src="<?= base_url ?>uploads/images/<?= $producto->imagen ?>" class="imageCarrito"/>
+                    <?php endif; ?>
+                </td>
+                <td>
+                    <a href="<?=base_url?>producto/ver&id=<?=$producto->id?>" class="linkTabla"><?=$producto->nombre?></a>
+                </td>
+                <td><?=$producto->precio?></td>
+                <td><?=$elemento['unidades']?></td>                             
+            </tr>
+            <?php endforeach;?>
+        <?php else:?>
+            <tr>
+                <td>------</td>
+                <td>------</td>
+                <td>------</td>
+                <td>------</td>
+            </tr>     
+        <?php endif;?>
+        
+</table>
+<?php $stats=Utils::statsCarrito();?>
+<div id="compraCarrito">
+    <h2>Numero de productos: <?=$stats['count']?></h2>
+    <h2>Importe total: <?=$stats['total']?></h2>
+    <a href="<?=base_url?>pedido/hacer" class="button button-small">Hacer pedido</a>
+</div>

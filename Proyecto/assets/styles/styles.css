@@ -253,7 +253,7 @@ td{
 #central h1{
     font-size: 48px;
     margin-bottom: 5px;
-    margin-top: 5%;
+    margin-top: 2%;
     font-weight: normal;
     letter-spacing: 1px;
     padding: 3%;
@@ -267,22 +267,23 @@ td{
 }
 
 .product img{
-    width: 270px;
+    width: 75%;
     height: 200px;
     padding: 10px;
 }
 .product{
     text-align:center;
     align-content: center;
+    justify-content: center;
     height: min-content;
     border: 1px solid black;
     float: left;
     margin-left: 2%;
     margin-right: 2%;
-    padding: 2.1%;
+    padding: 2%;
     margin-bottom: 4%;
     padding-bottom: 5%;
-    width: 24.5%;
+    width: 25%;
     flex: 1 1 auto;
     height: 380px;
 }
@@ -396,7 +397,7 @@ textarea,
 #detail-product img{
     display: block;
     width: 80%;
-    height: 330px;
+    height: 350px;
     float:left;
 }
 
@@ -436,8 +437,39 @@ textarea,
     margin-left: 20%;
 }
 
+.ventas{
+    padding: 1%;
+    width: 60%;
+}
+.button-ventas{
+    display:block;
+    padding: 3%;
+    background-color: #29f2a4;
+    border: none;
+    border-radius: 16px;
+    margin-top: 4%;
+    width: 30%;
+    font-size: 28px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: black;
+}
+.button-ventas:hover{
+    background-color: #69FF7B;
+    color: white;
+}
+.imageCarrito{
+    width: 150px;
+    height: 100px;
 
-
+}
+.linkTabla:hover{
+    color:blue;
+}
+#compraCarrito h2{
+    margin-left: 5%;
+    margin-bottom:2%;
+}
 
 @media all and (max-width: 1117px){
     #menu{

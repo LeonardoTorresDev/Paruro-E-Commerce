@@ -28,11 +28,40 @@
             }
         }
 
+        public static function isNotAdmin(){
+            if(!isset($_SESSION['identity'])){
+                return true;
+            }else{
+              if(isset($_SESSION['admin'])||$_SESSION['identity']->rol=='root'){
+                header("Location:".base_url);
+              }else{
+                  return true;
+              }
+            }
+        }
+
         public static function showCategorias(){
             require_once 'models/categoria.php';
             $categoria= new Categoria();
             $categorias=$categoria->getAll();
             return $categorias;
+        }
+
+        public static function statsCarrito(){
+            $stats=array(
+                'count'=>0,
+                'total'=>0
+            );
+            if(isset($_SESSION['carrito'])){
+                              
+                foreach($_SESSION['carrito'] as $indice=>$elemento){
+                    $stats['count']+=$elemento['unidades'];
+                    $stats['total']+=$elemento['unidades']*$elemento['precio'];
+                }
+                
+            }
+            
+            return $stats;
         }
     }
     

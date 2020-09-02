@@ -22,16 +22,39 @@
                             </li>
                         <?php endif;?>             
                     <?php else:?>
+                    <?php $stats=Utils::statsCarrito();?>
                     <li>
-                        <a href="#">Mis pedidos</a>
+                        <a href="<?=base_url?>carrito/index">Ver mi carrito</a>
                     </li>
                     <li>
-                        <a href="#">Mi carrito</a>
+                        <a href="<?=base_url?>carrito/index">Productos: <?=$stats['count']?></a>
+                    </li>
+                    <li>
+                        <a href="<?=base_url?>carrito/index">Total: S/.<?=$stats['total']?></a>
                     </li>
                     <?php endif;?>    
                 </ul> 
             </div>
         <?php endif;?>
+        
+        <?php if(empty($_SESSION['identity'])):?>
+            <div id="categorias">
+                <h3>Mi carrito</h3>
+                <ul>
+                    <?php $stats=Utils::statsCarrito();?>
+                    <li>
+                        <a href="<?=base_url?>carrito/index">Ver mi carrito</a>
+                    </li>
+                    <li>
+                        <a href="<?=base_url?>carrito/index">Productos: <?=$stats['count']?></a>
+                    </li>
+                    <li>
+                        <a href="<?=base_url?>carrito/index">Total: S/.<?=$stats['total']?></a>
+                    </li>
+                </ul>
+            </div>
+        <?php endif;?>
+        
         <div id="categorias">
             <h3>
                 Categorias

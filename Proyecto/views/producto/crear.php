@@ -21,10 +21,10 @@
         <textarea name="descripcion"><?=isset($pro) && is_object($pro) ? $pro->descripcion : ''; ?></textarea>
         
         <label for="precio">Precio</label>
-        <input type="number" name="precio" value="<?=isset($pro) && is_object($pro) ? $pro->precio : ''; ?>"/>
+        <input type="number" name="precio"  step="0.01" min="0.01" value="<?=isset($pro) && is_object($pro) ? $pro->precio : ''; ?>"/>
         
         <label for="stock">Stock</label>
-        <input type="number" name="stock" value="<?=isset($pro) && is_object($pro) ? $pro->stock : ''; ?>"/>
+        <input type="number" name="stock"   min="1" value="<?=isset($pro) && is_object($pro) ? $pro->stock : ''; ?>"/>
         
         <label for="categoria">Categoria</label>
         <?php $categorias=Utils::showCategorias();?>

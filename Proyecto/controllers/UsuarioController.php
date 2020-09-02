@@ -198,6 +198,9 @@
             if(isset($_SESSION['admin'])){
                 unset($_SESSION['admin']);
             }
+            if(isset($_SESSION['carrito'])){
+                unset($_SESSION['carrito']);
+            }
             header("Location:".base_url);
             ob_end_flush();
         }

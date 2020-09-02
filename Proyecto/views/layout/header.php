@@ -30,7 +30,7 @@ ob_start();
                     <a href="<?=base_url?>">Inicio</a>
                 </li>
                 <li class="menu_barra">
-                    <form class="busq" action="index.php" method="POST">
+                    <form class="busq" action="" method="POST">
                         <input class="busqBarra" type="text" name="buscar">
                         <input class="busqBoton" type="image" src="<?=base_url?>assets/img/lupa.png">
                     </form>                

@@ -1,7 +1,12 @@
 <?php
     class PedidoController{
-        public function index(){
-            echo "Controlador pedido, Accion index";
+        public function hacer(){
+            Utils::isNotAdmin();
+
+            require_once "views/pedido/hacer.php";
+        }
+        public function add(){
+            
         }
     }
 ?>
