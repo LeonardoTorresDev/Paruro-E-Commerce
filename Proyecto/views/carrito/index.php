@@ -5,6 +5,7 @@
         <th>Nombre</th>
         <th>Precio</th>
         <th>Unidades</th>
+        <th>Eliminar</th>
         <?php if(isset($_SESSION['carrito'])):?>
             </tr>
             <?php foreach($carrito as $indice=>$elemento):
@@ -20,7 +21,10 @@
                     <a href="<?=base_url?>producto/ver&id=<?=$producto->id?>" class="linkTabla"><?=$producto->nombre?></a>
                 </td>
                 <td><?=$producto->precio?></td>
-                <td><?=$elemento['unidades']?></td>                             
+                <td><?=$elemento['unidades']?></td>  
+                <td>
+                    <a href="<?=base_url?>carrito/delete&index=<?=$indice?>" class="button button-delete">Quitar producto</a>
+                </td>                           
             </tr>
             <?php endforeach;?>
         <?php else:?>
@@ -38,4 +42,5 @@
     <h2>Numero de productos: <?=$stats['count']?></h2>
     <h2>Importe total: <?=$stats['total']?></h2>
     <a href="<?=base_url?>pedido/hacer" class="button button-small">Hacer pedido</a>
+    <a href="<?=base_url?>carrito/delete_all" class="button button-small button-delete">Vaciar carrito</a>
 </div>

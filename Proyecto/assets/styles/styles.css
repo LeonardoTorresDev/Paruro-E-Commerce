@@ -60,6 +60,10 @@ td{
     font-size: 24px;
     margin-bottom: 20px;
 }
+
+.red{
+    background: #F16161;
+}
 .button-edit{
     background: #44E7F1;
     padding:10px;

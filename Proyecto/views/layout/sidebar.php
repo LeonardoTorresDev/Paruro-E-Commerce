@@ -14,7 +14,7 @@
                         <a href="<?=base_url?>producto/gestion">Gestionar productos</a>
                     </li>
                     <li>
-                        <a href="">Gestionar pedidos</a>
+                        <a href="<?=base_url?>pedido/gestion">Gestionar pedidos</a>
                     </li>
                         <?php if ($_SESSION['identity']->rol=='root') :?>
                             <li>
@@ -32,6 +32,9 @@
                     <li>
                         <a href="<?=base_url?>carrito/index">Total: S/.<?=$stats['total']?></a>
                     </li>
+                    <li>
+                        <a href="<?=base_url?>pedido/mis_pedidos">Mis pedidos</a>
+                    </li>
                     <?php endif;?>    
                 </ul> 
             </div>
@@ -41,6 +44,7 @@
             <div id="categorias">
                 <h3>Mi carrito</h3>
                 <ul>
+                    
                     <?php $stats=Utils::statsCarrito();?>
                     <li>
                         <a href="<?=base_url?>carrito/index">Ver mi carrito</a>
@@ -51,6 +55,7 @@
                     <li>
                         <a href="<?=base_url?>carrito/index">Total: S/.<?=$stats['total']?></a>
                     </li>
+                    
                 </ul>
             </div>
         <?php endif;?>

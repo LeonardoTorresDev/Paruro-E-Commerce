@@ -40,6 +40,28 @@
             }
         }
 
+        public static function isUser(){
+            if(isset($_SESSION['identity'])){
+                if( isset($_SESSION['admin'])|| $_SESSION['identity']->rol=='root'){
+                    header("Location:".base_url);
+                }else{
+                    return true;
+                }
+            }
+            else{
+                header("Location:".base_url);
+            }
+        }
+
+        public static function isLoged(){
+            if(isset($_SESSION['identity'])){
+                return true;
+            }
+            else{
+                header("Location:".base_url);
+            }
+        }
+
         public static function showCategorias(){
             require_once 'models/categoria.php';
             $categoria= new Categoria();
@@ -62,6 +84,22 @@
             }
             
             return $stats;
+        }
+
+        public static function showStatus($status){
+            $value = 'Pendiente';
+            
+            if($status == 'Confirm'){
+                $value = 'Pendiente';
+            }elseif($status == 'preparation'){
+                $value = 'En preparación';
+            }elseif($status == 'ready'){
+                $value = 'Preparado para enviar';
+            }elseif($status = 'sended'){
+                $value = 'Enviado';
+            }
+            
+            return $value;
         }
     }
     
