@@ -65,6 +65,7 @@
                 $producto=new Producto();
                 $producto->setCategoria_id($id);
                 $productos=$producto->getAllCategory();
+                
         
             }
 

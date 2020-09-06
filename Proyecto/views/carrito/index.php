@@ -10,6 +10,9 @@
             </tr>
             <?php foreach($carrito as $indice=>$elemento):
                 $producto=$elemento['producto'];
+                if($elemento['unidades']>$producto->stock){
+                    $elemento['unidades']=$producto->stock;
+                }
             ?>
             <tr>             
                 <td>

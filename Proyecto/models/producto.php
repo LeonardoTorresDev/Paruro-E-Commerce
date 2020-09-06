@@ -145,6 +145,14 @@
             return $result;
         }
 
+        public function getProductosByText($string){
+            $sql="SELECT * FROM productos WHERE nombre LIKE '%$string%';";
+            
+            $buscar=$this->db->query($sql);
+            
+            return $buscar;
+        }
+
 
         
 

@@ -140,6 +140,20 @@
 
         }
 
+        public function buscar(){
+	        if(!isset($_POST['buscar'])){
+		        header("Location:".base_url);
+            }
+            else{
+                $buscar=$_POST['buscar'];
+                
+                $producto=new Producto();
+                $productos=$producto->getProductosByText($buscar);
+                require_once 'views/producto/buscar.php';
+            }
+
+        }
+
 
     }
 ?>
