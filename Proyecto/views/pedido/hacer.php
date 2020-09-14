@@ -23,6 +23,10 @@
         <a href="<?=base_url?>usuario/login">Login</a>
     <?php  endif;?>
 <?php else:?>
-    <h1>Carrito sin productos</h1>
-    <p>Introduzca productos en el carrito por favor</p>
+    <?php
+        $_SESSION['vacio']="error";
+        var_dump($_SESSION['vacio']);
+        
+        header("Location:".base_url.'carrito/index');
+    ?>
 <?php endif;?>

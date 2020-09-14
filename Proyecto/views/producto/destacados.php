@@ -1,32 +1,22 @@
-    <h1 class="titulo">Ultimas novedades</h1>
-    <div class="product">
-        <img src="<?=base_url?>assets/img/ProductoArduino.jpg">
-        <h2>Arduino Uno</h2>
-        <p>PEN 37.00</p>
-        <a href="">Comprar</a>
+<h1 class="titulo">Ultimas novedades</h1>   
+
+<?php while($product = $productos->fetch_object()): ?>
+    <?php if($product->stock!=0):?>
+        <div class="product">     
+            <a href="<?=base_url?>producto/ver&id=<?=$product->id?>">
+                <?php if($product->imagen != null): ?>
+                    <img src="<?=base_url?>uploads/images/<?=$product->imagen?>" />
+                <?php else: ?>
+                    <img src="<?=base_url?>assets/img/camiseta.png" />
+                <?php endif; ?>
+                <h2><?=$product->nombre?></h2>
+            </a>
+            <p>S/. <?=$product->precio?></p>
+            <a href="<?=base_url?>producto/ver&id=<?=$product->id?>" class="button">Comprar</a>    
     </div>
-    <div class="product">
-        <img src="<?=base_url?>assets/img/ArduinoMega.jpg">
-        <h2>Arduino Mega</h2>
-        <p>PEN 67.00</p>
-        <a href="">Comprar</a>
-    </div>
-    <div class="product">
-        <img src="<?=base_url?>assets/img/ArduinoNano.jpg">
-        <h2>Arduino Nano</h2>
-        <p>PEN 17.00</p>
-        <a href="">Comprar</a>
-    </div>
-    <div class="product">
-        <img src="<?=base_url?>assets/img/Compuerta.jpg">
-        <h2>Compuerta 74LS08</h2>
-        <p>PEN 1.00</p>
-        <a href="">Comprar</a>
-    </div>
-    <div class="product">
-        <img src="<?=base_url?>assets/img/Compuerta.jpg">
-        <h2>Compuerta 74LS32</h2>
-        <p>PEN 1.00</p>
-        <a href="">Comprar</a>
-    </div>
+    <?php endif;?>
+<?php endwhile; ?>
+ 
+   
+   
 

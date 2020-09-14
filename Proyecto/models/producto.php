@@ -153,6 +153,11 @@
             return $buscar;
         }
 
+        public function getLast(){
+            $productos = $this->db->query("SELECT * FROM productos ORDER BY id DESC LIMIT 9;");
+		    return $productos;
+        }
+
 
         
 

@@ -3,6 +3,7 @@
     <?php if(isset($edit)&& isset($pro) && is_object($pro)):?>
         <h1>Editar producto:<br/> <?=$pro->nombre?></h1>
         <?php $action_url=base_url."producto/save&id=".$pro->id;?>
+        <?php if($pro->usuario_id!=$_SESSION['identity']->id): header("Location: ".base_url."producto/gestion"); endif;?>
     <?php else:?>
         <h1>Crear nuevo producto</h1>
         <?php $action_url=base_url."producto/save";?>

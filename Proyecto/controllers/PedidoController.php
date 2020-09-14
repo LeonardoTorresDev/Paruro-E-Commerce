@@ -1,5 +1,6 @@
 <?php
     require_once 'models/pedido.php';
+    require_once 'models/usuario.php';
     class PedidoController{
         
         public function hacer(){
@@ -66,7 +67,7 @@
                     unset($_SESSION['carrito']);//A futuro va a cambiar de posicion
                 }
                 $_SESSION['numeroPedidos']=count($sinRepetir);
-                header("Location:".base_url.'pedido/confirmado');	       
+                header("Location:".base_url.'pedido/mis_pedidos');	       
             }
             else{
                 header("Location:".base_url);
@@ -96,11 +97,19 @@
                 // Sacar el pedido
                 $pedido = new Pedido();
                 $pedido->setId($id);
+                
                 $pedido = $pedido->getOne();
+                $vendedor=$pedido->vendedor_id;
+                
                 
                 // Sacar los poductos
                 $pedido_productos = new Pedido();
                 $productos = $pedido_productos->getProductosByPedido($id);
+
+                //Sacar el numero de cuenta
+                $usuario=new Usuario();
+                $cuenta=$usuario->cuentaByVendor($vendedor);
+              
                 
                 require_once 'views/pedido/detalle.php';
             }else{

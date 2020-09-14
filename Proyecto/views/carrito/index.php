@@ -1,4 +1,8 @@
 <h1>Carrito de la compra</h1>
+    <?php if(isset($_SESSION['vacio'])):?> 
+       <p> <strong class="alert_red">El carrito esta vacio </strong></p><br/>
+    <?php endif;?>
+    <?php Utils::deleteSession('vacio');?>
 <table>
     <tr>
         <th>Imagen</th>

@@ -8,6 +8,7 @@
         private $password;
         private $rol;
         private $imagen;
+        private $cuenta;
         private $db;
 
         public function __construct()
@@ -51,6 +52,12 @@
         function setRol($rol){
             $this->rol=$rol;
         }
+        function getCuenta(){
+            return $this->cuenta;
+        }
+        function setCuenta($cuenta){
+            $this->cuenta=$cuenta;
+        }
         function getImagen(){
             return $this->imagen;
         }
@@ -69,7 +76,7 @@
         }
 
         public function saveAdmin(){
-            $sql="INSERT INTO usuarios VALUES (NULL, '{$this->getNombre()}' , '{$this->getApellidos()}' , '{$this->getEmail()}' , '{$this->getPassword()}','admin',NULL,NULL);";
+            $sql="INSERT INTO usuarios VALUES (NULL, '{$this->getNombre()}' , '{$this->getApellidos()}' , '{$this->getEmail()}' , '{$this->getPassword()}','admin',NULL,'{$this->getCuenta()}');";
             $save=$this->db->query($sql);
             $result=false;
             if($save){
@@ -95,6 +102,12 @@
                 }
             }
             return $result;
+        }
+
+        public function cuentaByVendor($vendedor_id){
+            $sql="SELECT cuenta FROM usuarios WHERE id=$vendedor_id";
+            $cuenta=$this->db->query($sql);
+            return $cuenta->fetch_object();
         }
         
     }

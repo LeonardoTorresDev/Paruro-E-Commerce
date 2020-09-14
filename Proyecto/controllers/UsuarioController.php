@@ -90,6 +90,7 @@
                $nombre=isset($_POST['nombre'])?$_POST['nombre']:false;
                $apellidos=isset($_POST['apellidos'])?$_POST['apellidos']:false;
                $email=isset($_POST['email'])?$_POST['email']:false;
+               $cuenta=isset($_POST['cuenta'])?$_POST['cuenta']:false; 
                $password=isset($_POST['password'])?$_POST['password']:false;  
                
                 //Array de errores
@@ -120,6 +121,15 @@
                     $email_validate=false;
                     $errores['email']="El email no es valido";
                 }
+                //Validar cuenta
+                if(!empty($cuenta)&& preg_match("/[0-9]/",$cuenta)){
+                    $cuenta_validate=true;
+                }
+                else{
+                    $cuenta_validate=false;
+                    $errores['cuenta']="La cuenta bancaria no es valida";
+                }
+
                 //Validar contraseña
                 if(!empty($password)){
                     $password_validate=true;
@@ -129,13 +139,14 @@
                     $errores['password']="La contraseña esta vacia";
                 }
 
-               if($nombre && $apellidos && $email && $password && count($errores)==0){
+               if($nombre && $apellidos && $email && $password && $cuenta && count($errores)==0){
 
                    $usuario=new Usuario();
                    $usuario->setNombre($nombre);
                    $usuario->setApellidos($apellidos);
                    $usuario->setEmail($email);
                    $usuario->setPassword($password);
+                   $usuario->setCuenta($cuenta);
                    $save=$usuario->saveAdmin();
 
                    if($save){

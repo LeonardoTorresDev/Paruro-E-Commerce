@@ -1,8 +1,15 @@
+
 <?php if (isset($gestion)): ?>
 	<h1>Gestionar pedidos</h1>
 <?php else: ?>
 	<h1>Mis pedidos</h1>
 <?php endif; ?>
+<?php if(isset($_SESSION['pedido'])&& $_SESSION['pedido']=='complete'):?>
+    <strong class="alert_green">El pedido ha sido realizado correctamente</strong><br/>
+<?php elseif(isset($_SESSION['pedido'])&& $_SESSION['pedido']=='failed'):?>
+    <strong class="alert_red">El pedido no se ha podido realizar</strong><br/>
+<?php endif;?>
+<?php Utils::deleteSession('pedido');?>
 <table>
 	<tr>
 		<th>Nº Pedido</th>

@@ -259,6 +259,9 @@ td{
     letter-spacing: 1px;
     padding: 3%;
 }
+#central h3, #central p{
+    margin-left: 3%;
+}
 
 .titulo{
     flex: 1 1 auto;
@@ -286,7 +289,7 @@ td{
     padding-bottom: 5%;
     width: 25%;
     flex: 1 1 auto;
-    height: 380px;
+    height: 320px;
 }
 .product h2{
     font-size: 24px;
@@ -344,6 +347,18 @@ textarea,
     margin-top: 3%;
     font-size: 16px;
 }
+#registro
+textarea:hover,
+#registro input[type="text"]:hover,
+#registro input[type="password"]:hover,
+#registro input[type="email"]:hover,
+#registro input[type="number"]:hover,
+#registro select:hover{
+    border: 2px solid black;
+}
+
+
+
 #registro input[type="submit"]{
     padding: 3%;
     padding-left: 15%;
@@ -356,6 +371,11 @@ textarea,
     background-color:none;
     font-size: 18px;
     
+}
+
+#registro input[type="submit"]:hover{
+    background:#d8d8d8;
+    border-color: #b0b0b0;
 }
 
 #registro textarea{
@@ -462,8 +482,12 @@ textarea,
 .imageCarrito{
     width: 150px;
     height: 100px;
-
 }
+.imagePedidos{
+    width: 250px;
+    height: 150px;
+}
+
 .linkTabla:hover{
     color:blue;
 }

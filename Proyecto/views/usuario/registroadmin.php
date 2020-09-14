@@ -22,7 +22,11 @@
                 <label for="email">Email</label>
                 <input type="email" name="email" placeholder="Ingrese su email" />
                 <?php echo isset($_SESSION['errores']) ? Utils::mostrarError($_SESSION['errores'],'password'):'';?>
-                <label for="password">Contraseña</label>
+
+                <label for="cuenta">Cuenta Bancaria (solo números)</label>
+                <input type="text" name="cuenta" placeholder="XXXX-XXXX-XXXX-XXXX"/>
+                
+                <label for="password">Contraseña</label>       
                 <input type="password" name="password" placeholder="Ingrese su contraseña" />
                 <input type="submit" value="Registrar"/>
                 <?php Utils::deleteSession('register'); ?>

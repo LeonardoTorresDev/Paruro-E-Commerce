@@ -4,6 +4,8 @@
 
     class ProductoController{
         public function index(){
+            $producto=new Producto();
+            $productos=$producto->getLast();
             require_once 'views/producto/destacados.php';
         }
 
