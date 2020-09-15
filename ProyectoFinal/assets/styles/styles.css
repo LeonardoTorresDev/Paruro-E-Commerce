@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background: #E6E6E6;  
+    font-family: Nanum Gothic;
+}
+
+a{
+    color: black;
+}
+
+a:hover{
+    color: whitesmoke;
+}
+
+table{
+    text-align:center;
+    width: 90%;
+    border: 1px solid black;
+    margin-left:5%;
+    margin-bottom: 5%;
+}
+th{
+    padding: 1%;
+}
+td{
+    padding: 2%;
+    border-top:1px solid #736D6D;
+}
+
+.thumb{
+    display: block;
+    width: 500px; height: 350px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.button{
+    margin-left:5%;
+    display:block;
+    background: #29f2a4;
+    text-decoration:none;
+    color: black;
+    font-weight: bolder;
+    border-radius: 8px;
+    margin-top: 1%;
+}
+.button-small{
+    width: 30%;
+    height: 30px;
+    padding: 1%;
+    text-align:center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.red{
+    background: #F16161;
+}
+.button-edit{
+    background: #44E7F1;
+    padding:10px;
+    margin-bottom: 10px;
+}
+.button-delete{
+    background: #F16161;
+    padding:10px;
+    margin-bottom: 10px;
+}
+
+
+#header{
+    text-align: center;
+    padding: 2%;
+    background-color: #E6E6E6; 
+}
+#header a{
+
+    font-weight: bold;
+    font-size: 48px;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+#header a:hover{
+    font-size: 54px;
+    transition: 0.5s ease;
+    color: #5B5B5B;
+}
+#header h2{
+
+    font-weight: normal;
+    color: black;
+    padding: 15px;
+}
+#header hr{
+    padding: 1px;
+    background-color: black;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;   
+}
+
+/*NAV BAR*/
+#menu{
+    clear: both;
+    background: whitesmoke;
+    height: 60px;
+    border-top: 5px double black;
+    border-bottom: 5px double black;
+}
+#menu ul{
+    justify-content: center;
+    list-style: none;
+    text-decoration:none;
+    margin-top: 0.5%;
+}
+#menu ul li{
+    line-height: 25px;
+    float: left;
+}
+
+.menu_lista{
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 1.5em;
+}
+
+.menu_barra{
+    flex: 5 1 auto;
+}
+
+.menu_el{
+    flex: 1 1 auto;
+}
+
+.busq{
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+
+.busqBarra{
+    flex: 10 1 auto;
+    align-content: center;
+    width: 90%;
+    height: 40px;
+    border: 2px solid #C6C5C5;
+    border-radius:8px;
+    font-size: 20px;
+}
+
+#menu ul li input[type="text"]:focus{
+    border: 2px solid black;  
+
+}
+#menu ul li input[type="text"]:hover{
+    border: 2px solid #5B5B5B; 
+    
+}
+
+.busqBoton{
+    margin-top: 2px;
+    flex: 1 1 auto;
+    margin-left: 25px;
+    margin-top: 10px;
+    height: 1.5em;
+    width: 1.5em;
+}
+#menu ul li a{
+    display: block;
+    color: black;
+}
+#menu a{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right:50px;
+    margin-left: 20px;
+}
+#menu a:hover{
+    color: #736D6D;
+    border-bottom: 2px solid black;
+}
+/*Contenedor padre*/
+.contenido{
+    display: flex;
+    flex-flow: row nowrap;
+}
+/*LATERAL*/
+#lateral{
+    /*flex: 2 1 auto;*/
+    float:left;
+    margin-top: 2.5%;
+    margin-left: 10px;
+    margin-right: 2%;
+    min-width: 200px;
+    border: 1px solid black;
+    padding: 15px;
+    height: max-content;
+
+}
+#lateral ul{
+    text-decoration:none;
+    list-style: square;
+    margin-left:15%;
+    margin-bottom: 15%;
+}
+#lateral ul li{
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+#lateral h3{
+    padding:7%;
+}
+#lateral a{
+    text-decoration: none;
+}
+#login{
+    margin-top: 5%;
+    border: 1px solid black;
+    margin-bottom: 10%;
+}
+#categorias{
+    border: 1px solid black;
+    margin-bottom: 5%;
+}
+#lateral ul li a{
+    color: #696969;
+}
+#lateral ul li a:hover{
+    color: black;
+}
+
+/*CENTRAL*/
+#central{  
+    float:right;
+    flex: 9 1 auto;
+    height: auto;
+    min-height: 900px;
+    border: 1px solid black;
+    margin-right: 25px;
+    margin-top: 2.5%;
+    padding: 10px;
+    display: block;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+#central h1{
+    font-size: 48px;
+    margin-bottom: 5px;
+    margin-top: 2%;
+    font-weight: normal;
+    letter-spacing: 1px;
+    padding: 3%;
+    font-weight: bold;
+}
+#central h3, #central p{
+    margin-left: 3%;
+}
+
+.titulo{
+    flex: 1 1 auto;
+    text-align: center;
+    width: 100%;
+    height: min-content;
+}
+
+.product img{
+    width: 75%;
+    height: 200px;
+    padding: 10px;
+}
+.product img:hover{
+    opacity:0.5;
+    transition: 0.5s ease;    
+}
+.product{
+    text-align:center;
+    align-content: center;
+    justify-content: center;
+    height: min-content;
+    border: 1px solid black;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 2%;
+    margin-bottom: 4%;
+    padding-bottom: 5%;
+    width: 25%;
+    flex: 1 1 auto;
+    height: 320px;
+}
+.product h2{
+    font-size: 24px;
+    font-weight: bold;
+    
+    color: black;
+}
+.product h2:hover{
+    color: #5B5B5B;
+}
+.product p{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.product a{
+    font-size: 24px;
+    padding: 10px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#registro{
+    padding: 10%;
+    justify-content: center;
+    margin-right: 5%;
+    margin-left: 15%;
+}
+#registro h1{
+
+    font-weight: bold;
+    margin-bottom: 15px;
+
+}
+#registro hr{
+    padding: 2px;
+    background-color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20%;   
+}
+#registro
+textarea,
+#registro input[type="text"],
+#registro input[type="password"],
+#registro input[type="email"],
+#registro input[type="number"],
+#registro select{
+    padding: 2%;
+    width: 80%;
+    display: block;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    font-size: 16px;
+}
+#registro
+textarea:hover,
+#registro input[type="text"]:hover,
+#registro input[type="password"]:hover,
+#registro input[type="email"]:hover,
+#registro input[type="number"]:hover,
+#registro select:hover{
+    border: 2px solid black;
+}
+
+
+
+#registro input[type="submit"]{
+    padding: 3%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    margin-left: 25%;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color:none;
+    font-size: 18px;
+    
+}
+
+#registro input[type="submit"]:hover{
+    background:#d8d8d8;
+    border-color: #b0b0b0;
+}
+
+#registro textarea{
+    resize:none;
+}
+
+.alert_green{
+    padding-bottom: 20px;
+    padding-top: 10px;
+    display: block;
+    color: green;
+}
+.alert_red{
+    padding-bottom: 20px;
+    padding-top: 10px;
+    display: block;
+    color: #F16161;
+}
+
+#footer{
+    margin-top: 15px;
+    clear: both;
+    text-align: center;
+    padding-top:2%;
+    padding-bottom: 2%;
+}
+
+/*VER PRODUCTOS*/
+#detail-product{
+    width: 100%;
+    margin-left: 5%;
+}
+
+#detail-product .image{
+    display: block;
+    width: 47%;
+    float:left;
+}
+
+#detail-product img{
+    display: block;
+    width: 80%;
+    height: 350px;
+    float:left;
+}
+
+#detail-product .data{
+    font-size: 24px;
+    width: 50%;
+    float:right;
+}
+
+#detail-product .description{
+    margin-bottom: 20px;
+    text-align: justify;
+    width: 80%;
+
+}
+
+#detail-product .price{
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #444;
+}
+
+#detail-product .button{
+    width: 200px;
+    text-align: center;
+    margin-top: 5%;
+    padding: 25px;
+}
+#detail-product .oferta{
+    color: green;
+}
+
+.contacto{
+    width: 60%;
+    place-content: center;
+    margin-top: 30px;
+    margin-left: 20%;
+}
+
+.ventas{
+    padding: 1%;
+    width: 60%;
+}
+.button-ventas{
+    display:block;
+    padding: 3%;
+    background-color: #29f2a4;
+    border: none;
+    border-radius: 16px;
+    margin-top: 4%;
+    width: 30%;
+    font-size: 28px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: black;
+}
+.button-ventas:hover{
+    background-color: #69FF7B;
+    color: white;
+}
+.imageCarrito{
+    width: 150px;
+    height: 100px;
+}
+.imagePedidos{
+    width: 250px;
+    height: 150px;
+}
+
+.linkTabla:hover{
+    color:blue;
+}
+#compraCarrito h2{
+    margin-left: 5%;
+    margin-bottom:2%;
+}
+
+@media all and (max-width: 1117px){
+    #menu{
+        height: 120px;
+    }
+}
+
+@media all and (max-width: 900px){
+    .product img{
+        display: none;
+    }
+}
